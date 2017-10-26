@@ -7,6 +7,8 @@ class TestRobot < MiniTest::Test
   def test_that_foreign_robot_needing_repairs_sent_to_station_1
     # arrange
     robot = Robot.new
+    robot.needs_repairs = true
+    robot.foreign_model = true
     # act
     result = robot.station
     # assert
